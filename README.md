@@ -122,3 +122,18 @@ Verify API Docs: http://localhost:8005/docs
 streamlit run dashboard/app.py
 ```
 Open Dashboard: http://localhost:8501
+
+---
+
+## 🧪 v5.3: Running Automated Tests (Pytest)
+
+This project includes a "Google-level" safety net of automated tests (`test/` directory) using `pytest`.
+
+### 1. Run All Tests (Unit + E2E)
+This runs both the Unit tests (Data Processing) and the End-to-End API tests (Docker Integration).
+
+**⚠️ Prerequisite:** You must build the Docker image first, as the E2E tests spin up the container automatically.
+```bash
+docker build -t diamonds-api:v4 .
+python -m pytest
+```
